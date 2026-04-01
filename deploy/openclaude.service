@@ -6,6 +6,8 @@ After=network-online.target
 Type=simple
 WorkingDirectory=%h/openClaude
 Environment=NODE_ENV=production
+Environment=OPENCLAUDE_HOST=127.0.0.1
+Environment=OPENCLAUDE_PORT=18883
 ExecStart=/usr/bin/env node %h/openClaude/src/index.js
 Restart=always
 RestartSec=2
