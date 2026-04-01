@@ -5,10 +5,10 @@ export function getCapabilities(config) {
     app_name: 'openClaude',
     menu: ['chat', 'missions', 'trace', 'runtime', 'settings'],
     quick_prompts: [
-      'Inspect the current repository and summarize the highest-risk code path.',
-      'Create a small test that proves this bug is fixed.',
-      'Plan and implement a mission to harden runtime health handling.',
-      'Review recent changes and list the most likely regressions.',
+      'Run a structured architecture review and list weak assumptions.',
+      'Design a mission plan and execute first implementation step.',
+      'Produce test-first fixes for the top two stability issues.',
+      'Audit provider routing behavior under degraded upstream conditions.',
     ],
     features: {
       chat: true,
@@ -20,12 +20,15 @@ export function getCapabilities(config) {
       self_heal: true,
       browser_control: true,
       git_runtime: true,
+      workspace_guardrails: true,
+      reasoning_focus: true,
       memory_inspection: false,
       research: false,
     },
     ui: {
       shell: 'shared-autonomy-v1',
       chat_style: 'imessage',
+      skin: 'claude-sand',
     },
     runtime: {
       host: config.host,
