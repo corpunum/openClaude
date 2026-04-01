@@ -1,0 +1,14 @@
+[Unit]
+Description=openClaude Autonomous Service
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/openClaude
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/env node %h/openClaude/src/index.js
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=default.target

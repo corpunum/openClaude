@@ -7,9 +7,15 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "node --watch src/index.js",
-    "test": "node tests/run.js"
+    "test": "node tests/run.js",
+    "e2e:webui": "node tests/e2e/webui-chat.e2e.js"
   },
-  "keywords": ["autonomous", "assistant", "agent", "ai"],
+  "keywords": [
+    "autonomous",
+    "assistant",
+    "agent",
+    "ai"
+  ],
   "author": "Antonis",
   "license": "MIT",
   "dependencies": {

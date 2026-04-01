@@ -1,56 +1,28 @@
 # openClaude
 
-Autonomous general assistant with web UI - no approvals required.
+Autonomous general assistant with Web UI.
 
-## Features
+## Runtime Isolation
+- App home: `~/.openclaude`
+- Config: `~/.openclaude/config.json`
+- Sessions: `~/.openclaude/data/sessions`
+- Memory DB: `~/.openclaude/data/memory.db`
 
-- **Auto-approve mode**: Executes tasks immediately without user confirmation
-- **Persistent sessions**: Chat history saved to JSON files
-- **Web UI**: Clean interface with sidebar session list
-- **Tools**: File ops, shell, git, browser, research
-- **Cloud models**: Primary qwen3.5:397b-cloud with fallbacks
+## Providers
+- Ollama local/cloud
+- OpenRouter
+- NVIDIA NIM
+- OpenAI
 
-## Quick Start
-
+## Start
 ```bash
 npm install
 npm start
 ```
+UI: `http://127.0.0.1:18883`
 
-Open http://127.0.0.1:18883
-
-## API
-
-- `GET /api/sessions` - List all sessions
-- `POST /api/sessions` - Create new session
-- `GET /api/sessions/:id` - Get session details
-- `DELETE /api/sessions/:id` - Delete session
-- `POST /api/chat` - Send message (body: `{ message, sessionId }`)
-- `GET /api/health` - Health check
-
-## Architecture
-
+## Test
+```bash
+npm test
+npm run e2e:webui
 ```
-src/
-  core/
-    agent.js - Autonomous agent loop
-    session-manager.js - Session persistence
-    config.js - Configuration
-  tools/
-    file.js - File operations
-    shell.js - Shell commands
-    git.js - Git operations
-    browser.js - Browser automation
-    research.js - Web search & research
-  ui/
-    server.js - HTTP + WebSocket server
-    public/index.html - Web UI
-  memory/
-    memory.js - SQLite + BM25
-  health/
-    circuit-breaker.js - Provider health
-```
-
-## License
-
-MIT
